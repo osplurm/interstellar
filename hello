@@ -1,0 +1,15 @@
+local Players = game:GetService("Players")
+local StarterGui = game:GetService("StarterGui")
+local player = Players.LocalPlayer
+
+local userId = player.UserId
+local thumbnailType = Enum.ThumbnailType.HeadShot
+local thumbnailSize = Enum.ThumbnailSize.Size420x420
+
+local avatarImageUrl = Players:GetUserThumbnailAsync(userId, thumbnailType, thumbnailSize)
+
+StarterGui:SetCore("SendNotification", {
+    Title = "[Interstellar]",
+    Text = "Welcome to Interstellar, " .. player.Name .. " enjoy!",  
+    Icon = avatarImageUrl
+})
